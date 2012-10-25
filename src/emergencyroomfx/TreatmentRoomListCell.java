@@ -42,7 +42,7 @@ public class TreatmentRoomListCell extends ListCell<TreatmentRoom> {
         if (item != null)
         {
             String label = "ID: " + item.getPatient().getPriority();
-                    Button button = new Button(label);
+            Button button = new Button(label);
         
             setGraphic(button);
         }
