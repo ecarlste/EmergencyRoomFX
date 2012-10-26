@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.collections.*?>
 <?import javafx.geometry.*?>
@@ -95,7 +96,7 @@
                     </VBox>
                     <HBox id="HBox" alignment="CENTER_RIGHT" spacing="10.0">
                       <children>
-                        <Button fx:id="newButton" mnemonicParsing="false" text="New" />
+                        <Button fx:id="newButton" mnemonicParsing="false" onAction="#newButtonAction" text="New" />
                         <Button fx:id="saveButton" mnemonicParsing="false" text="Save" />
                         <Button fx:id="deleteButton" mnemonicParsing="false" text="Delete" />
                       </children>
@@ -111,6 +112,10 @@
         </AnchorPane>
       </items>
     </SplitPane>
-    <ListView fx:id="treatmentRoomList" layoutY="0.0" orientation="HORIZONTAL" prefHeight="78.0" prefWidth="640.0000999999975" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    <ListView fx:id="treatmentRoomList" layoutY="0.0" orientation="HORIZONTAL" prefHeight="78.0" prefWidth="640.0000999999975" styleClass="treatment-room-list-view" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <stylesheets>
+        <URL value="@styles/EmergencyRoomFX.css" />
+      </stylesheets>
+    </ListView>
   </children>
 </AnchorPane>

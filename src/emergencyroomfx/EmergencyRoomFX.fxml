@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import java.util.*?>
 <?import javafx.collections.*?>
 <?import javafx.geometry.*?>
@@ -113,4 +114,7 @@
     </SplitPane>
     <ListView fx:id="treatmentRoomList" layoutY="0.0" orientation="HORIZONTAL" prefHeight="78.0" prefWidth="640.0000999999975" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
   </children>
+  <stylesheets>
+    <URL value="@styles/EmergencyRoomFX.css" />
+  </stylesheets>
 </AnchorPane>

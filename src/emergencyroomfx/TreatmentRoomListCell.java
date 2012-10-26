@@ -5,8 +5,12 @@
 package emergencyroomfx;
 
 import emergencyroom.TreatmentRoom;
-import javafx.scene.control.Button;
+import javafx.geometry.Pos;
 import javafx.scene.control.ListCell;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 /**
  *
@@ -22,29 +26,33 @@ public class TreatmentRoomListCell extends ListCell<TreatmentRoom> {
     {
         super.updateItem(item, empty);
         
-        /*
-        String label = "ID: " + room.getPatient().getPriority();
-        
-        Button nodeGraphic = new Button(label);
-        
-        setGraphic(nodeGraphic);
-        */
-        
-        /*
-        Rectangle rect = new Rectangle(100, 100);
-        if (item != null)
-        {
-            rect.setFill(Color.CHOCOLATE);
-            setGraphic(rect);
-        }
-        */
+        setStyle("-fx-padding: 0; -fx-background-color: lightgray");
         
         if (item != null)
         {
-            String label = "ID: " + item.getPatient().getPriority();
-            Button button = new Button(label);
-        
-            setGraphic(button);
+            DropShadow shadow = new DropShadow();
+            shadow.setOffsetX(1);
+            shadow.setOffsetY(1);
+            
+            Rectangle outerRect = new Rectangle(100,76);
+            outerRect.setOpacity(0.0);
+            outerRect.setFill(Color.BLACK);
+            
+            Rectangle rect = new Rectangle(85,65);
+            rect.setFill(Color.LIGHTSLATEGRAY);
+            rect.setArcHeight(15);
+            rect.setArcWidth(15);
+            rect.setEffect(shadow);
+            
+            double rectTranslate = (outerRect.getHeight() - rect.getHeight()) / 2;
+            
+            rect.setTranslateX(rectTranslate);
+            rect.setTranslateY(rectTranslate);
+            
+            Pane pane = new Pane();
+            pane.getChildren().addAll(outerRect, rect);
+            
+            setGraphic(pane);
         }
     }
     

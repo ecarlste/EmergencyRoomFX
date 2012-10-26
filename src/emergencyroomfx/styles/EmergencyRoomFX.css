@@ -1,0 +1,21 @@
+/* 
+    Document   : EmergencyRoomFX
+    Created on : Oct 25, 2012, 8:07:37 PM
+    Author     : es.carlsten
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.treatment-room-list-cell {
+    -fx-padding: 0;
+    -fx-background-color: blue;
+}
+
+.patient-queue-list-cell {
+    -fx-background-color: green;
+}
+
